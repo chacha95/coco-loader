@@ -16,9 +16,9 @@ class Info:
     url: str
     date_created: datetime = field(
         metadata=config(
-            encoder=lambda d: d.strftime('%Y/%m/%d'),
-            decoder=lambda s: datetime.strptime(s, '%Y/%m/%d'),
-            mm_field=fields.DateTime(format='%Y/%m/%d')
+            encoder=lambda d: d.strftime("%Y/%m/%d"),
+            decoder=lambda s: datetime.strptime(s, "%Y/%m/%d"),
+            mm_field=fields.DateTime(format="%Y/%m/%d"),
         )
     )
 
@@ -32,14 +32,18 @@ class Image:
     file_name: str
     license: int
     coco_url: str
-    flickr_url: Optional[str] = None
     date_captured: Optional[datetime] = field(
         metadata=config(
-            encoder=lambda d: d.strftime('%Y-%m-%d %H:%M:%S') if d is not None else None,
-            decoder=lambda s: datetime.strptime(s, '%Y-%m-%d %H:%M:%S') if s is not None else None,
-            mm_field=fields.DateTime(format='iso')
+            encoder=lambda d: d.strftime("%Y-%m-%d %H:%M:%S")
+            if d is not None
+            else None,
+            decoder=lambda s: datetime.strptime(s, "%Y-%m-%d %H:%M:%S")
+            if s is not None
+            else None,
+            mm_field=fields.DateTime(format="iso"),
         )
     )
+    flickr_url: Optional[str] = None
 
 
 @dataclass_json

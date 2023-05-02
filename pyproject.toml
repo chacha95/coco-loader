@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coco-loader"
-version = "0.0.3"
+version = "0.0.4"
 description = "COCO dataset loader."
 license = "MIT"
 authors = ["Jinhyuck Cha <jhcha@superb-ai.com>"]
@@ -10,14 +10,20 @@ homepage = "https://github.com/jinhyuckcha/coco-loader"
 repository = "https://github.com/jinhyuckcha/coco-loader"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.7"
 dataclasses-json = "^0.5.4"
-
-[tool.poetry.dev-dependencies]
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/jinhyuckcha/coco-loader/issues"
 
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]
