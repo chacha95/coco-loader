@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coco-loader"
-version = "0.1.0"
+version = "0.1.1"
 description = "COCO dataset loader."
 license = "MIT"
 authors = ["Jinhyuck Cha <jhcha@superb-ai.com>"]
@@ -8,6 +8,7 @@ maintainers = ["Jinhyuck Cha <jhcha@superb-ai.com>"]
 readme = "README.md"
 homepage = "https://github.com/jinhyuckcha/coco-loader"
 repository = "https://github.com/jinhyuckcha/coco-loader"
+packages = [{ include = "coco_loader" }]
 
 [tool.poetry.dependencies]
 python = "^3.7"
