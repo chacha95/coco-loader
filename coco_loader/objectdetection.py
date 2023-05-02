@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 
 from dataclasses_json import dataclass_json
 
@@ -29,5 +29,5 @@ class ObjectDetectionCategory(Category):
 @dataclass_json
 @dataclass
 class ObjectDetectionDataset(Dataset):
-    annotations: List[ObjectDetectionAnnotation]
-    categories: List[ObjectDetectionCategory]
+    categories: Optional[List[ObjectDetectionCategory]] = None
+    annotations: Optional[List[ObjectDetectionAnnotation]] = None
